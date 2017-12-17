@@ -8,7 +8,6 @@ Requirements
 # Host Setup
 1.	Install Docker version 17.06.0+
 2.	Install Docker Compose version 1.15.0+
-3.	Clone this repository
 
 # Getting ElasticSearch up and running.
 
