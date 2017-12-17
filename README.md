@@ -2,8 +2,9 @@
 
 Traditional ELK setup 
 
-Setting up ELK(Elasticsearch, Logstash, Kibana) stack individually and  then using Docker and to bring up ELK stack
-Requirements
+Setting up ELK(Elasticsearch, Logstash, Kibana) stack individually
+
+# Requirements
 
 # Host Setup
 1.	Install Docker version 17.06.0+
