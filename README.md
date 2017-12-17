@@ -67,7 +67,7 @@ Now ElasticSearch is running on port 9200.
 Now Kibana is running on port 5601.
 
 
-# Get Logstach up and running.
+# Get Logstash up and running.
 
 1.	Download and unzip Logstach from official site https://www.elastic.co/downloads/logstash .
 
