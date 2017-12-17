@@ -16,20 +16,34 @@ Getting ElasticSearch up and running.
 3.	Point your browser to  http://localhost:9200 or curl http://localhost:9200/   in command line, you should get similar response.
 
 
+
 {
   "name" : "8OZ-zhg",
+  
   "cluster_name" : "elasticsearch",
+  
   "cluster_uuid" : "WyBWEwfMRDC7uf49Gy9MMA",
+  
   "version" : {
-    "number" : "6.1.0",
-    "build_hash" : "c0c1ba0",
-    "build_date" : "2017-12-12T12:32:54.550Z",
-    "build_snapshot" : false,
-    "lucene_version" : "7.1.0",
-    "minimum_wire_compatibility_version" : "5.6.0",
-    "minimum_index_compatibility_version" : "5.0.0"
+  
+  "number" : "6.1.0",
+  
+  "build_hash" : "c0c1ba0",
+  
+  "build_date" : "2017-12-12T12:32:54.550Z",
+  
+  "build_snapshot" : false,
+  
+  "lucene_version" : "7.1.0",
+  
+  "minimum_wire_compatibility_version" : "5.6.0",
+  
+  "minimum_index_compatibility_version" : "5.0.0"
+  
   },
+  
   "tagline" : "You Know, for Search"
+
 }
 
 Now ElasticSearch is running on port 9200.
@@ -57,8 +71,11 @@ a.	Create a logstash file logstash.config
 input { stdiin {} }
 
 output {
+
 elasticsearch {hosts => [“localhost:9200”] }
+
 stdout { codec => rubydebug }
+
 }
 
 This is the skeleton of a logstash.config file, let’s customize it for an example and change it.
@@ -73,32 +90,55 @@ d.	Specify an index name : cars , document_type : “sold_cars”
 
 
 input{
-	file {
-		path => "Path to cars.csv"
-		start_position => "beginning"
-		sincedb_path => "/dev/null"
+
+file {
+
+path => "Path to cars.csv"
+
+	start_position => "beginning"
+
+	sincedb_path => "/dev/null"
+	
 	}
+
 }
 
 filter{
+
 	csv{
+	
 		separator => ","
+		
 		columns => ["maker", "model", "mileage", "manufacture_year", "engine_displacement", "engine_power", "body_type", "color_slug", "stk_year", "transmission", "door_count", "seat_count", "fuel_type", "date_created",   "date_last_seen", "price_eur"]
 	}
+	
 	mutate {convert => ["mileage","integer"] }
+	
 	mutate {convert => ["price_eur","float"] }
+	
 	mutate {convert => ["engine_power","integer"] }
+	
 	mutate {convert => ["door_count","integer"] }
+	
 	mutate {convert => ["seat_count","integer"] }
+
 }
 
+
 output {
+
 	elasticsearch {
+	
 		hosts => "localhost"
+		
 		index => "cars"
+		
 		document_type => "sold_cars"
+		
 		}
+		
 		stdout {}
+
 }
 
 
