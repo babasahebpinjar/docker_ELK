@@ -134,7 +134,7 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 	
 		mutate {convert => ["seat_count","integer"] }
 
-	}
+		}
 
 
 		output {
