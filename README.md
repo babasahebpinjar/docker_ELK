@@ -85,11 +85,15 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 
 2.	Download a kaggle data set (Cars_dataset) as an input 
 3.	Customizing the config file for cars dataset.
-a.	Renaming the downloaded dataset to a smaller name cars.csv
-b.	Mentioning the columns names in the config files
-c.	Changing the type of variables to integers using mutate (eg: mileage,
+
+	a.	Renaming the downloaded dataset to a smaller name cars.csv
+
+	b.	Mentioning the columns names in the config files
+
+	c.	Changing the type of variables to integers using mutate (eg: mileage,
 price_eur etc).
-d.	Specify an index name : cars , document_type : “sold_cars”
+
+	d.	Specify an index name : cars , document_type : “sold_cars”
 
 
 input{
