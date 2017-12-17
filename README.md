@@ -1,15 +1,16 @@
-# docker_ELK
+# ELK Stack
+
 Traditional ELK setup 
 
 Setting up ELK(Elasticsearch, Logstash, Kibana) stack individually and  then using Docker and to bring up ELK stack
 Requirements
 
-Host Setup
+# Host Setup
 1.	Install Docker version 17.06.0+
 2.	Install Docker Compose version 1.15.0+
 3.	Clone this repository
 
-Getting ElasticSearch up and running.
+# Getting ElasticSearch up and running.
 
 1.	Download and unzip Elastic Search from official site ElasticSearchOfficialDownload.
 2.	Run bin/elasticsearch or bin\elasticsearch.bat on Windows)
@@ -49,7 +50,7 @@ Getting ElasticSearch up and running.
 Now ElasticSearch is running on port 9200.
 
 
-Getting Kibana up and running.
+# Getting Kibana up and running.
 
 1.	Download and unzip kibana from official site KibanaOfficialDownload .
 2.	Open config/kibana.yml in editor and set elasticsearch.url to point to your Elastic search instance.
@@ -60,7 +61,7 @@ elasticsearch.url: http://localhost:9200
 Now Kibana is running on port 5601.
 
 
-Get Logstach up and running.
+# Get Logstach up and running.
 
 1.	Download and unzip Logstach from official site LogstachOfficialDownload
 
