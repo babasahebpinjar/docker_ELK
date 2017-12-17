@@ -14,38 +14,38 @@ Requirements
 
 1.	Download and unzip Elastic Search from official site https://www.elastic.co/downloads/elasticsearch 
 2.	Run bin/elasticsearch or bin\elasticsearch.bat (on Windows)
-3.	Point your browser to  http://localhost:9200 or curl http://localhost:9200/   in command line, you should get similar response.
+3.	Point your browser to  http://localhost:9200 or curl http://localhost:9200/   in command line, 
+	you should get similar response.
 
 
+		{
+  		"name" : "8OZ-zhg",
+  
+  		"cluster_name" : "elasticsearch",
+  
+  		"cluster_uuid" : "WyBWEwfMRDC7uf49Gy9MMA",
+  
+  		"version" : {
+  
+  		"number" : "6.1.0",
+  
+ 		 "build_hash" : "c0c1ba0",
+  
+  		"build_date" : "2017-12-12T12:32:54.550Z",
+  
+  		"build_snapshot" : false,
+  
+ 		 "lucene_version" : "7.1.0",
+  
+ 		 "minimum_wire_compatibility_version" : "5.6.0",
+  
+		"minimum_index_compatibility_version" : "5.0.0"
+  
+  		},
+  
+  		"tagline" : "You Know, for Search"
 
-{
-  "name" : "8OZ-zhg",
-  
-  "cluster_name" : "elasticsearch",
-  
-  "cluster_uuid" : "WyBWEwfMRDC7uf49Gy9MMA",
-  
-  "version" : {
-  
-  "number" : "6.1.0",
-  
-  "build_hash" : "c0c1ba0",
-  
-  "build_date" : "2017-12-12T12:32:54.550Z",
-  
-  "build_snapshot" : false,
-  
-  "lucene_version" : "7.1.0",
-  
-  "minimum_wire_compatibility_version" : "5.6.0",
-  
-  "minimum_index_compatibility_version" : "5.0.0"
-  
-  },
-  
-  "tagline" : "You Know, for Search"
-
-}
+		}
 
 Now ElasticSearch is running on port 9200.
 
@@ -53,11 +53,15 @@ Now ElasticSearch is running on port 9200.
 # Getting Kibana up and running.
 
 1.	Download and unzip kibana from official site https://www.elastic.co/downloads/kibana .
+
 2.	Open config/kibana.yml in editor and set elasticsearch.url to point to your Elastic search instance.
 
 #to do the above uncomment the line in kibana.yml;
-elasticsearch.url: http://localhost:9200
+
+	elasticsearch.url: http://localhost:9200
+
 3.	Run bin/kibana (or bin\kibana.bat on Windows)
+
 4.	Point your browser to http://localhost:5601 .You should see Kibana Welcome page UI.
 
 Now Kibana is running on port 5601.
@@ -111,7 +115,7 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 
 		}
 
-	filter{
+		filter{
 
 		csv{
 	
@@ -133,7 +137,7 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 	}
 
 
-	output {
+		output {
 
 		elasticsearch {
 	
@@ -152,7 +156,7 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 
 4.	Run the following command in the logstash folder
 
-	bin/logstash –f logstash.config
+		bin/logstash –f logstash.config
 
 
 Now we can visualize the dataset and create Pie charts etc..
