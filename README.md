@@ -12,7 +12,7 @@ Requirements
 
 # Getting ElasticSearch up and running.
 
-1.	Download and unzip Elastic Search from official site ElasticSearchOfficialDownload.
+1.	Download and unzip Elastic Search from official site https://www.elastic.co/downloads/elasticsearch 
 2.	Run bin/elasticsearch or bin\elasticsearch.bat on Windows)
 3.	Point your browser to  http://localhost:9200 or curl http://localhost:9200/   in command line, you should get similar response.
 
@@ -52,7 +52,7 @@ Now ElasticSearch is running on port 9200.
 
 # Getting Kibana up and running.
 
-1.	Download and unzip kibana from official site KibanaOfficialDownload .
+1.	Download and unzip kibana from official site https://www.elastic.co/downloads/kibana .
 2.	Open config/kibana.yml in editor and set elasticsearch.url to point to your Elastic search instance.
 #to do the above uncomment the line in kibana.ym;
 elasticsearch.url: http://localhost:9200
@@ -63,7 +63,7 @@ Now Kibana is running on port 5601.
 
 # Get Logstach up and running.
 
-1.	Download and unzip Logstach from official site LogstachOfficialDownload
+1.	Download and unzip Logstach from official site https://www.elastic.co/downloads/logstash .
 
 Running Logstach involves setting up the config file and running Logstach with that config file, which I will explain with an example. 
 
