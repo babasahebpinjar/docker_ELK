@@ -1,14 +1,16 @@
 # docker_ELK
-Traditional ELK setup and dockerized ELK 
-# docker_ELK
-Traditional ELK setup and dockerized ELK 
+Traditional ELK setup 
+
 Setting up ELK(Elasticsearch, Logstash, Kibana) stack individually and  then using Docker and to bring up ELK stack
 Requirements
+
 Host Setup
 1.	Install Docker version 17.06.0+
 2.	Install Docker Compose version 1.15.0+
 3.	Clone this repository
+
 Getting ElasticSearch up and running.
+
 1.	Download and unzip Elastic Search from official site ElasticSearchOfficialDownload.
 2.	Run bin/elasticsearch or bin\elasticsearch.bat on Windows)
 3.	Point your browser to  http://localhost:9200 or curl http://localhost:9200/   in command line, you should get similar response.
@@ -31,7 +33,8 @@ Getting ElasticSearch up and running.
 Now ElasticSearch is running on port 9200.
 
 
-Getting Kibana up and running
+Getting Kibana up and running.
+
 1.	Download and unzip kibana from official site KibanaOfficialDownload .
 2.	Open config/kibana.yml in editor and set elasticsearch.url to point to your Elastic search instance.
 #to do the above uncomment the line in kibana.ym;
@@ -39,7 +42,10 @@ elasticsearch.url: http://localhost:9200
 3.	Point your browser to http://localhost:5601 .You should see Kibana Welcome page UI.
 
 Now Kibana is running on port 5601.
-Get Logstach up and running
+
+
+Get Logstach up and running.
+
 1.	Download and unzip Logstach from official site LogstachOfficialDownload
 
 Running Logstach involves setting up the config file and running Logstach with that config file, which I will explain with an example. 
@@ -58,10 +64,6 @@ b.	Mentioning the columns names in the config files
 c.	Changing the type of variables to integers using mutate (eg: mileage,
 price_eur etc).
 d.	Specify an index name : cars , document_type : “sold_cars”
-
-
-
-
 
 input{
 	file {
