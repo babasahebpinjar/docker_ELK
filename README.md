@@ -55,6 +55,7 @@ Running Logstach involves setting up the config file and running Logstach with t
 a.	Create a logstash file logstash.config
 
 input { stdiin {} }
+
 output {
 elasticsearch {hosts => [“localhost:9200”] }
 stdout { codec => rubydebug }
