@@ -13,7 +13,7 @@ Requirements
 # Getting ElasticSearch up and running.
 
 1.	Download and unzip Elastic Search from official site https://www.elastic.co/downloads/elasticsearch 
-2.	Run bin/elasticsearch or bin\elasticsearch.bat on Windows)
+2.	Run bin/elasticsearch or bin\elasticsearch.bat (on Windows)
 3.	Point your browser to  http://localhost:9200 or curl http://localhost:9200/   in command line, you should get similar response.
 
 
