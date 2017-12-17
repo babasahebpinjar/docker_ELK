@@ -54,9 +54,11 @@ Now ElasticSearch is running on port 9200.
 
 1.	Download and unzip kibana from official site https://www.elastic.co/downloads/kibana .
 2.	Open config/kibana.yml in editor and set elasticsearch.url to point to your Elastic search instance.
-#to do the above uncomment the line in kibana.ym;
+
+#to do the above uncomment the line in kibana.yml;
 elasticsearch.url: http://localhost:9200
-3.	Point your browser to http://localhost:5601 .You should see Kibana Welcome page UI.
+3.	Run bin/kibana (or bin\kibana.bat on Windows)
+4.	Point your browser to http://localhost:5601 .You should see Kibana Welcome page UI.
 
 Now Kibana is running on port 5601.
 
