@@ -53,12 +53,15 @@ Get Logstach up and running.
 Running Logstach involves setting up the config file and running Logstach with that config file, which I will explain with an example. 
 
 a.	Create a logstash file logstash.config
+
 input { stdiin {} }
 output {
 elasticsearch {hosts => [“localhost:9200”] }
 stdout { codec => rubydebug }
 }
+
 This is the skeleton of a logstash.config file, let’s customize it for an example and change it.
+
 2.	Download a kaggle data set (Cars_dataset) as an input 
 3.	Customizing the config file for cars dataset.
 a.	Renaming the downloaded dataset to a smaller name cars.csv
@@ -67,6 +70,7 @@ c.	Changing the type of variables to integers using mutate (eg: mileage,
 price_eur etc).
 d.	Specify an index name : cars , document_type : “sold_cars”
 
+
 input{
 	file {
 		path => "Path to cars.csv"
@@ -74,6 +78,7 @@ input{
 		sincedb_path => "/dev/null"
 	}
 }
+
 filter{
 	csv{
 		separator => ","
@@ -85,6 +90,7 @@ filter{
 	mutate {convert => ["door_count","integer"] }
 	mutate {convert => ["seat_count","integer"] }
 }
+
 output {
 	elasticsearch {
 		hosts => "localhost"
