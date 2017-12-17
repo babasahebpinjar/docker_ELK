@@ -69,21 +69,22 @@ Now Kibana is running on port 5601.
 
 Running Logstach involves setting up the config file and running Logstach with that config file, which I will explain with an example. 
 
-a.	Create a logstash file logstash.config
+	a.	Create a logstash file logstash.config
 
-input { stdiin {} }
+		input { stdiin {} }
 
-output {
+		output {
 
-elasticsearch {hosts => [“localhost:9200”] }
+			elasticsearch {hosts => [“localhost:9200”] }
 
-stdout { codec => rubydebug }
+			stdout { codec => rubydebug }
 
-}
+			}
 
 This is the skeleton of a logstash.config file, let’s customize it for an example and change it.
 
 2.	Download a kaggle data set (Cars_dataset) as an input 
+
 3.	Customizing the config file for cars dataset.
 
 	a.	Renaming the downloaded dataset to a smaller name cars.csv
@@ -91,66 +92,68 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 	b.	Mentioning the columns names in the config files
 
 	c.	Changing the type of variables to integers using mutate (eg: mileage,
-price_eur etc).
+		price_eur etc).
 
 	d.	Specify an index name : cars , document_type : “sold_cars”
 
 
-input{
+		input{
 
-file {
+		file {
 
-path => "Path to cars.csv"
+			path => "Path to cars.csv"
 
-	start_position => "beginning"
+			start_position => "beginning"
 
-	sincedb_path => "/dev/null"
+			sincedb_path => "/dev/null"
 	
-	}
+			}
 
-}
-
-filter{
-
-	csv{
-	
-		separator => ","
-		
-		columns => ["maker", "model", "mileage", "manufacture_year", "engine_displacement", "engine_power", "body_type", "color_slug", "stk_year", "transmission", "door_count", "seat_count", "fuel_type", "date_created",   "date_last_seen", "price_eur"]
-	}
-	
-	mutate {convert => ["mileage","integer"] }
-	
-	mutate {convert => ["price_eur","float"] }
-	
-	mutate {convert => ["engine_power","integer"] }
-	
-	mutate {convert => ["door_count","integer"] }
-	
-	mutate {convert => ["seat_count","integer"] }
-
-}
-
-
-output {
-
-	elasticsearch {
-	
-		hosts => "localhost"
-		
-		index => "cars"
-		
-		document_type => "sold_cars"
-		
 		}
-		
-		stdout {}
 
-}
+	filter{
+
+		csv{
+	
+			separator => ","
+		
+			columns => ["maker", "model", "mileage", "manufacture_year", "engine_displacement", "engine_power", "body_type", "color_slug", "stk_year", "transmission", "door_count", "seat_count", "fuel_type", "date_created",   "date_last_seen", "price_eur"]
+		}
+	
+		mutate {convert => ["mileage","integer"] }
+	
+		mutate {convert => ["price_eur","float"] }
+	
+		mutate {convert => ["engine_power","integer"] }
+	
+		mutate {convert => ["door_count","integer"] }
+	
+		mutate {convert => ["seat_count","integer"] }
+
+	}
+
+
+	output {
+
+		elasticsearch {
+	
+			hosts => "localhost"
+		
+			index => "cars"
+		
+			document_type => "sold_cars"
+		
+			}
+		
+			stdout {}
+
+		}
 
 
 4.	Run the following command in the logstash folder
-bin/logstash –f logstash.config
+
+	bin/logstash –f logstash.config
+
 
 Now we can visualize the dataset and create Pie charts etc..
 	
