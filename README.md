@@ -159,7 +159,7 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 		bin/logstash –f logstash.config
 
 
-Now we can visualize the dataset and create Pie charts etc..
+Now we can visualize the dataset and create Pie charts etc in Kibana.
 	
 
 	
