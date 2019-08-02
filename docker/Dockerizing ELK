@@ -1,0 +1,13 @@
+We will now dockerize Elasticsearch, logstash and kibana.
+
+1.  data folder
+      cdr : The data for which you want to do visulization
+      elasticsearch : elastic index will be stored in this path
+      logstash  :
+      kibana  :
+      
+2.  config
+    Here we will keep the logstash file
+    
+3.  sincedb
+
