@@ -161,5 +161,6 @@ This is the skeleton of a logstash.config file, let’s customize it for an exam
 
 Now we can visualize the dataset and create Pie charts etc in Kibana.
 	
+# Next, we will dockerize ELK using docker-compose, check docker folder.
 
 	
